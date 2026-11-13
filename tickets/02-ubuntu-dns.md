@@ -18,6 +18,8 @@ The issue was documented in osTicket as ticket #172259, titled "Unable to Access
 The simulated user, Jordan Mitchell, reported that restarting Firefox and the computer had not resolved the problem.
 
 
+![Original osTicket showing the Ubuntu website access issue](../screenshots/ticket-02/00-osTicket-Intial-Ticket.png)
+
 
 ## Lab Environment
 
@@ -33,6 +35,7 @@ The simulated user, Jordan Mitchell, reported that restarting Firefox and the co
 **Simulation Setup:** To reproduce a DNS resolution failure in the lab, I intentionally changed the DNS server on interface `enp0s8` from `192.168.86.1` to `192.0.2.1` using `resolvectl`.
 
 
+
 ## Troubleshooting Steps
 
 ### 1. Reproduced the Reported Website Access Issue
@@ -42,6 +45,10 @@ I opened Firefox on the Ubuntu VM and attempted to access `example.com`.
 Firefox displayed a "Server Not Found" error, confirming that the Ubuntu client could not access the website.
 
 This reproduced the issue described in the original help desk ticket.
+
+
+![Firefox displaying a website access failure on Ubuntu](../screenshots/ticket-02/05-Firefox-Website-Failure.png)
+
 
 ### 2. Tested DNS Resolution
 
@@ -54,6 +61,10 @@ resolvectl query example.com
 The DNS query failed, indicating that the system could not resolve the domain name.
 
 This suggested that the website access issue could be related to DNS rather than the browser itself.
+
+
+![Failed DNS resolution test using resolvectl on Ubuntu](../screenshots/ticket-02/04-DNS-Resolution-Failure.png)
+
 
 ### 3. Verified External IP Connectivity
 
@@ -72,6 +83,10 @@ The results showed:
 This confirmed that the Ubuntu VM could communicate with an external IP address even though domain-name resolution was failing.
 
 The successful ping helped narrow the issue to DNS resolution rather than a complete network connectivity failure.
+
+
+![Successful ping test confirming external IP connectivity on Ubuntu](../screenshots/ticket-02/06-IP-Connectivity-Success.png)
+
 
 
 ### 4. Checked the Network Interface
@@ -104,6 +119,11 @@ The output showed that network interface `enp0s8` was configured to use the foll
 192.0.2.1
 ```
 
+
+
+![Ubuntu DNS configuration showing the incorrect DNS server](../screenshots/ticket-02/03-DNS-Misconfig.png)
+
+
 This was not the original working DNS server.
 
 Because the Ubuntu VM could reach an external IP address but could not resolve domain names, the incorrect DNS server configuration was identified as the cause of the issue.
@@ -124,6 +144,10 @@ resolvectl status
 
 The output confirmed that the DNS server had been restored to `192.168.86.1`.
 
+
+![Ubuntu DNS configuration showing the restored DNS server](../screenshots/ticket-02/07-DNS-Config-After.png)
+
+
 ### 7. Verified DNS Resolution
 
 After restoring the correct DNS server, I tested domain-name resolution again.
@@ -133,6 +157,10 @@ resolvectl query example.com
 ```
 
 The query completed successfully and returned IP addresses for the domain.
+
+
+![Successful DNS resolution after restoring the correct DNS server](../screenshots/ticket-02/08-DNS-Resolution-Success.png)
+
 
 This confirmed that Ubuntu could resolve domain names again.
 
@@ -145,6 +173,10 @@ https://example.com
 ```
 
 The website loaded successfully without the previous DNS-related error.
+
+
+![Firefox successfully loading example.com after DNS restoration](../screenshots/ticket-02/09-Firefox-Website-Success.png)
+
 
 This confirmed that website access had been restored.
 
@@ -186,8 +218,16 @@ The following checks confirmed that the issue was resolved:
 
 **Note:** Changes made using `resolvectl dns` may not persist after a network restart or system reboot. For a permanent correction, the appropriate persistent network configuration should also be checked and updated if necessary.
 
+
 ## Ticket Documentation
 
 After restoring DNS functionality, I documented the troubleshooting findings, root cause, resolution, and verification results in osTicket.
 
+![osTicket internal note documenting the Ubuntu DNS troubleshooting and resolution](../screenshots/ticket-02/10-osTicket-Internal-Note.png)
+
 The ticket was marked resolved after confirming that DNS resolution and website access were restored.
+
+![osTicket response to the end user explaining the DNS resolution and confirming ticket closure](../screenshots/ticket-02/11-osTicket-Resolved-Ticket.png)
+
+
+
