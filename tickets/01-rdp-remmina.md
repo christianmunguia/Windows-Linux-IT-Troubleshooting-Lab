@@ -7,7 +7,13 @@ A user reported being unable to establish a Remote Desktop connection from an Ub
 The goal was to identify why the connection was failing, restore Remote Desktop functionality, and verify that the Ubuntu client could connect successfully.
 
 
-### Original Help Desk Ticket
+## Original Help Desk Ticket
+
+
+The issue was documented in osTicket as ticket #966332, titled "Unable to connect to Windows PC using Remmina."
+
+The simulated user, Alex Morgan, reported being unable to establish a remote desktop connection from an Ubuntu computer to a Windows PC using Remmina.
+
 
 ![Initial osTicket ticket showing the user's RDP connection issue](../screenshots/ticket-01/00-initial-tech-view.png)
 
