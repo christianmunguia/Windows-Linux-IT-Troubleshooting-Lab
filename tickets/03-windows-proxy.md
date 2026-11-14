@@ -221,7 +221,11 @@ After restoring website access, I documented the troubleshooting findings, root 
 
 The ticket included an internal troubleshooting note and a response explaining the resolution to the simulated end user.
 
+### Internal Note
+
 ![osTicket internal note documenting the Windows proxy troubleshooting and resolution](../screenshots/ticket-03/11-osTicket-Internal-Note.png)
+
+### User Reply and Ticket Closure
 
 ![osTicket response to the end user explaining the proxy resolution](../screenshots/ticket-03/12-osTicket-Reply-Note.png)
 
