@@ -221,9 +221,13 @@ The following checks confirmed that the issue was resolved:
 
 ## Ticket Documentation
 
+### Internal Note
+
 After restoring DNS functionality, I documented the troubleshooting findings, root cause, resolution, and verification results in osTicket.
 
 ![osTicket internal note documenting the Ubuntu DNS troubleshooting and resolution](../screenshots/ticket-02/10-osTicket-Internal-Note.png)
+
+### User Reply and Ticket Closure
 
 The ticket was marked resolved after confirming that DNS resolution and website access were restored.
 
