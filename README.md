@@ -24,12 +24,12 @@ Each scenario documetns the reported problem, the commands and tools I used to i
 
 | Ticket | Issue | Root Cause and Resolution |
 |---|---|---|
-| 01 | RDP / Remmina Connection Failure | A restrictive RDP policy (`fDenyTSConnections=1`) disabled Remote Desktop, and no RDP listener was active. Removed the policy restriction, restored the RDP listener, and verified remote access. |
-| 02 | Ubuntu DNS Resolution Failure | An incorrect DNS server prevented domain names from resolving. Restored the correct DNS server and verified name resolution. |
-| 03 | Windows Proxy Configuration Issue | Incorrect proxy settings prevented websites from loading. Corrected the proxy configuration and confirmed access was restored. |
-| 04 | Windows NTFS Permissions Issue | Missing folder permissions and disabled file inheritance prevented access. Restored read access and re-enabled inheritance. |
-| 05 | Windows Network Connectivity Failure | An incorrect static default gateway prevented external connectivity. Restored DHCP and verified network access. |
-| 06 | Linux SSH Service Failure | The SSH service and socket were stopped. Started the SSH socket and confirmed remote access worked. |
+| 01 | [RDP / Remmina Connection Failure](tickets/01-rdp-remmina.md) | A restrictive RDP policy (`fDenyTSConnections=1`) disabled Remote Desktop, and no RDP listener was active. Removed the policy restriction, restored the RDP listener, and verified remote access. |
+| 02 | [Ubuntu DNS Resolution Failure](tickets/02-ubuntu-dns.md) | An incorrect DNS server prevented domain names from resolving. Restored the correct DNS server and verified name resolution. |
+| 03 | [Windows Proxy Configuration Issue](tickets/03-windows-proxy.md) | Incorrect proxy settings prevented websites from loading. Corrected the proxy configuration and confirmed access was restored. |
+| 04 | [Windows NTFS Permissions Issue](tickets/04-windows-ntfs.md) | Missing folder permissions and disabled file inheritance prevented access. Restored read access and re-enabled inheritance. |
+| 05 | [Windows Network Connectivity Failure](tickets/05-windows-default-gateway.md) | An incorrect static default gateway prevented external connectivity. Restored DHCP and verified network access. |
+| 06 | [Linux SSH Service Failure](tickets/06-ubuntu-ssh.md) | The SSH service and socket were stopped. Started the SSH socket and confirmed remote access worked. |
 
 ## Troubleshooting Approach
 
