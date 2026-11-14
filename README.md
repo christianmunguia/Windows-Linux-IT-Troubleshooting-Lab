@@ -53,16 +53,20 @@ After applying a fix, I retested the original problem and documented the finding
 - Help desk ticket management using osTicket
 - Technical documentation and verification
 
+
 ## Project Documentation
 
-- Each of the six incidents has a separate technical writeup covering:
-- Issue description and lab setup
+Each of the six troubleshooting tickets includes:
+
+- Issue description and lab environment
 - Troubleshooting steps and diagnostic findings
 - Root cause and resolution
-- Verification and prevention
-- Supporting screenshots
+- Verification and prevention recommendations
+- Supporting screenshots and osTicket documentation
 
-See the tickets/ directory for individual troubleshooting writeups and the screenshots/ directory for supporting evidence.
+See the [tickets/](tickets/) directory for individual troubleshooting writeups and the [screenshots/](screenshots/) directory for supporting evidence.
+
+
 
 ## Project Scope
 
