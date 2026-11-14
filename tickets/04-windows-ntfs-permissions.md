@@ -209,6 +209,7 @@ Confirmed that Dinesh could access the required folder and document without bein
 
 ## Ticket Documentation
 
+### Internal Note
 
 Documented the troubleshooting process in osTicket, including the initial folder access issue, the incorrect NTFS permissions, and the additional file-level inheritance problem.
 
@@ -217,6 +218,7 @@ Recorded the steps taken to restore the appropriate permissions and verify that 
 ![osTicket internal troubleshooting note](../screenshots/ticket-04/12-osTicket-Internal-Note.png)
 
 
+### User Reply and Ticket Closure
 
 Replied to the user through osTicket to communicate that the permissions issue had been resolved.
 
