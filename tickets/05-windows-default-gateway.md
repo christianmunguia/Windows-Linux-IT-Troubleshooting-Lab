@@ -311,7 +311,7 @@ The original connectivity issue was no longer reproducible after restoring autom
 
 ## Ticket Documentation
 
-
+### Internal Note
 
 Documented the troubleshooting process in osTicket, including the incorrect default gateway, failed external connectivity tests, and routing table findings.
 
@@ -320,6 +320,7 @@ Recorded the steps taken to restore automatic IPv4 and DNS configuration through
 ![osTicket internal troubleshooting note](../screenshots/ticket-05/19-osTicket-Internal-Note.png)
 
 
+### User Reply and Ticket Closure
 
 Replied to the user through osTicket to communicate that the network connectivity issue had been resolved.
 
